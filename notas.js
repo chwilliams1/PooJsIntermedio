@@ -38,3 +38,6 @@ Object.getOwnPropertyDescriptors(objetito)
 email: {value: 'juanito@frijolitos.io', writable: true, enumerable: true, configurable: true}
 name: {value: 'Juanito', writable: true, enumerable: true, configurable: true}
 [[Prototype]]: Object */
+
+// Clase 3
+
