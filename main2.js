@@ -7,10 +7,37 @@ obj1 = {
     }
 }
 
-const stringifiedComplexObj = JSON.stringify(obj1);
+function isObject(subject){
+    return typeof subject == "object";
+}
 
-const obj2 = JSON.parse(stringifiedComplexObj);
+function isArray(subject){
+    return Array.isArray(subject);
+}
 
+function deepCopy(subject){
+    let copySubject;
+
+    const subjectIsObject = isObject(subject);
+    const subjecIsArray = isArray(subject);
+
+    if (subjectIsArray){
+        copySubject =[];
+    }else if(subjectIsObject) {
+        copySubject ={};
+    }
+    else{
+        return subject;
+    }
+
+    for (key in subject ) {
+        const keyIsObject = isObject(subject(key))
+        if (keyIsObject){
+            copySubject[key] = deepCopy(subject(key));
+        }
+    }
+    return copySubject;
+}
 
 
 
